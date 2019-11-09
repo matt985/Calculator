@@ -5,6 +5,7 @@ class Calcolatrice:
 
     def __init__(self, parent):
         self.genitore = parent
+        parent.title("Calcolatrice 1.1")
         self.contenitore = Frame(parent)
         self.contenitore.pack()
 
@@ -87,7 +88,7 @@ class Calcolatrice:
         # UTILITY BUTTONS
         self.abort_button = Button(self.contenitore, command = self.pulsante_abort_premuto)
         self.abort_button.configure(text="Abort")
-        self.abort_button.grid(row=4, column=3)
+        self.abort_button.grid(row=4, column=1)
 
 
 
@@ -150,7 +151,6 @@ class Calcolatrice:
         else:
             self.digits_num2.append("6")
             print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
-
 
 
     def button7Premuto(self):
@@ -251,6 +251,8 @@ class Calcolatrice:
             self.risultato = num1 / num2
             self.operation = ""
 
+        label = Label(self.contenitore, text=self.risultato)
+        label.grid(row=5, column=1)
 
 
     # Gestione pulsanti utility

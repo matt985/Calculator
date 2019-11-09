@@ -1,0 +1,3 @@
+PROSSIME FUNZIONALITA':
+- consenti di mantenere l'ultimo risultato come primo operando della nuova operazione
+- consenti di visualizzare le cifre del numero corrente anche in GUI
