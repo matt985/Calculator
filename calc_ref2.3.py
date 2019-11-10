@@ -22,7 +22,7 @@ class Calcolatrice:
         imb_interna_contenitorey = "3m"
 
         self.genitore = parent
-        parent.title("Calcolatrice 2.0")
+        parent.title("Calcolatrice 2.1")
 
         # VARIABILI DI SERVIZIO
         self.digits_num1 = []                   # funge da buffer per il primo numero
@@ -128,25 +128,47 @@ class Calcolatrice:
 
     def button1Premuto(self):
         print("Premuto: 1")
-        if not self.operation:
-            self.digits_num1.append("1")
-            print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
-            label1 = Label(self.quadro_pulsanti, text=self.digits_num1)
-            label1.grid(row=5, column=1)
+        if self.operation != '':
+            if self.risultato == None:
+                self.digits_num1.append("1")
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                label1 = Label(self.quadro_pulsanti, text=self.digits_num1)
+                label1.grid(row=5, column=1)
+            else:
+                print("C'è già un risultato...")
+                print("Entro nell'ELSE")
+                self.digits_num1.append(str(self.risultato))
+                self.risultato = ''
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                self.digits_num2.append("1")
+                print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
+                label1 = Label(self.quadro_pulsanti, text=self.digits_num2)
+                label1.grid(row=5, column=1)
         else:
             self.digits_num2.append("1")
             print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
-            label1 = Label(self.quadro_pulsanti, text=self.digits_num2)                 # con il widget Label mostro il buffer tipo display
-            label1.grid(row=5, column=1)
+            label1 = Label(self.quadro_pulsanti, text=self.digits_num2)
+            label1.grid(row=5, column=1)    
 
 
     def button2Premuto(self):
         print("Premuto: 2")
-        if not self.operation:
-            self.digits_num1.append("2")
-            print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
-            label2 = Label(self.quadro_pulsanti, text=self.digits_num1)
-            label2.grid(row=5, column=1)
+        if self.operation != '':
+            if self.risultato == None:
+                self.digits_num1.append("2")
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                label2 = Label(self.quadro_pulsanti, text=self.digits_num1)
+                label2.grid(row=5, column=1)
+            else:
+                print("C'è già un risultato...")
+                print("Entro nell'ELSE")
+                self.digits_num1.append(str(self.risultato))
+                self.risultato = ''
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                self.digits_num2.append("2")
+                print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
+                label2 = Label(self.quadro_pulsanti, text=self.digits_num2)
+                label2.grid(row=5, column=1)
         else:
             self.digits_num2.append("2")
             print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
@@ -156,25 +178,46 @@ class Calcolatrice:
 
     def button3Premuto(self):
         print("Premuto: 3")
-        if not self.operation:
-            self.digits_num1.append("3")
-            print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
-            label3 = Label(self.quadro_pulsanti, text=self.digits_num1)
-            label3.grid(row=5, column=1)
+        if self.operation != '':
+            if self.risultato == None:
+                self.digits_num1.append("3")
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                label3 = Label(self.quadro_pulsanti, text=self.digits_num1)
+                label3.grid(row=5, column=1)
+            else:
+                print("C'è già un risultato...")
+                print("Entro nell'ELSE")
+                self.digits_num1.append(str(self.risultato))
+                self.risultato = ''
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                self.digits_num2.append("3")
+                print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
+                label3 = Label(self.quadro_pulsanti, text=self.digits_num2)
+                label3.grid(row=5, column=1)
         else:
             self.digits_num2.append("3")
             print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
             label3 = Label(self.quadro_pulsanti, text=self.digits_num2)
             label3.grid(row=5, column=1)
 
-
     def button4Premuto(self):
         print("Premuto: 4")
-        if not self.operation:
-            self.digits_num1.append("4")
-            print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
-            label4 = Label(self.quadro_pulsanti, text=self.digits_num1)
-            label4.grid(row=5, column=1)
+        if self.operation != '':
+            if self.risultato == None:
+                self.digits_num1.append("4")
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                label4 = Label(self.quadro_pulsanti, text=self.digits_num1)
+                label4.grid(row=5, column=1)
+            else:
+                print("C'è già un risultato...")
+                print("Entro nell'ELSE")
+                self.digits_num1.append(str(self.risultato))
+                self.risultato = ''
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                self.digits_num2.append("4")
+                print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
+                label4 = Label(self.quadro_pulsanti, text=self.digits_num2)
+                label4.grid(row=5, column=1)
         else:
             self.digits_num2.append("4")
             print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
@@ -184,11 +227,22 @@ class Calcolatrice:
 
     def button5Premuto(self):
         print("Premuto: 5")
-        if not self.operation:
-            self.digits_num1.append("5")
-            print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
-            label5 = Label(self.quadro_pulsanti, text=self.digits_num1)
-            label5.grid(row=5, column=1)
+        if self.operation != '':
+            if self.risultato == None:
+                self.digits_num1.append("5")
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                label5 = Label(self.quadro_pulsanti, text=self.digits_num1)
+                label5.grid(row=5, column=1)
+            else:
+                print("C'è già un risultato...")
+                print("Entro nell'ELSE")
+                self.digits_num1.append(str(self.risultato))
+                self.risultato = ''
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                self.digits_num2.append("5")
+                print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
+                label5 = Label(self.quadro_pulsanti, text=self.digits_num2)
+                label5.grid(row=5, column=1)
         else:
             self.digits_num2.append("5")
             print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
@@ -198,11 +252,22 @@ class Calcolatrice:
 
     def button6Premuto(self):
         print("Premuto: 6")
-        if not self.operation:
-            self.digits_num1.append("6")
-            print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
-            label6 = Label(self.quadro_pulsanti, text=self.digits_num1)
-            label6.grid(row=5, column=1)
+        if self.operation != '':
+            if self.risultato == None:
+                self.digits_num1.append("6")
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                label6 = Label(self.quadro_pulsanti, text=self.digits_num1)
+                label6.grid(row=5, column=1)
+            else:
+                print("C'è già un risultato...")
+                print("Entro nell'ELSE")
+                self.digits_num1.append(str(self.risultato))
+                self.risultato = ''
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                self.digits_num2.append("6")
+                print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
+                label6 = Label(self.quadro_pulsanti, text=self.digits_num2)
+                label6.grid(row=5, column=1)
         else:
             self.digits_num2.append("6")
             print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
@@ -212,11 +277,22 @@ class Calcolatrice:
 
     def button7Premuto(self):
         print("Premuto: 7")
-        if not self.operation:
-            self.digits_num1.append("7")
-            print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
-            label7 = Label(self.quadro_pulsanti, text=self.digits_num1)
-            label7.grid(row=5, column=1)
+        if self.operation != '':
+            if self.risultato == None:
+                self.digits_num1.append("7")
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                label7 = Label(self.quadro_pulsanti, text=self.digits_num1)
+                label7.grid(row=5, column=1)
+            else:
+                print("C'è già un risultato...")
+                print("Entro nell'ELSE")
+                self.digits_num1.append(str(self.risultato))
+                self.risultato = ''
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                self.digits_num2.append("7")
+                print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
+                label7 = Label(self.quadro_pulsanti, text=self.digits_num8)
+                label7.grid(row=5, column=1)
         else:
             self.digits_num2.append("7")
             print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
@@ -224,13 +300,25 @@ class Calcolatrice:
             label7.grid(row=5, column=1)
 
 
+
     def button8Premuto(self):
         print("Premuto: 8")
-        if not self.operation:
-            self.digits_num1.append("8")
-            print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
-            label8 = Label(self.quadro_pulsanti, text=self.digits_num1)
-            label8.grid(row=5, column=1)
+        if self.operation != '':
+            if self.risultato == None:
+                self.digits_num1.append("8")
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                label8 = Label(self.quadro_pulsanti, text=self.digits_num1)
+                label8.grid(row=5, column=1)
+            else:
+                print("C'è già un risultato...")
+                print("Entro nell'ELSE")
+                self.digits_num1.append(str(self.risultato))
+                self.risultato = ''
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                self.digits_num2.append("8")
+                print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
+                label8 = Label(self.quadro_pulsanti, text=self.digits_num2)
+                label8.grid(row=5, column=1)
         else:
             self.digits_num2.append("8")
             print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
@@ -240,25 +328,46 @@ class Calcolatrice:
 
     def button9Premuto(self):
         print("Premuto: 9")
-        if not self.operation:
-            self.digits_num1.append("9")
-            print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
-            label9 = Label(self.quadro_pulsanti, text=self.digits_num1)
-            label9.grid(row=5, column=1)
+        if self.operation != '':
+            if self.risultato == None:
+                self.digits_num1.append("9")
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                label9 = Label(self.quadro_pulsanti, text=self.digits_num1)
+                label9.grid(row=5, column=1)
+            else:
+                print("C'è già un risultato...")
+                print("Entro nell'ELSE")
+                self.digits_num1.append(str(self.risultato))
+                self.risultato = ''
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                self.digits_num2.append("9")
+                print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
+                label9 = Label(self.quadro_pulsanti, text=self.digits_num2)
+                label9.grid(row=5, column=1)
         else:
             self.digits_num2.append("9")
             print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
             label9 = Label(self.quadro_pulsanti, text=self.digits_num2)
             label9.grid(row=5, column=1)
 
-
     def button0Premuto(self):
         print("Premuto: 0")
-        if not self.operation:
-            self.digits_num1.append("0")
-            print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
-            label0 = Label(self.quadro_pulsanti, text=self.digits_num1)
-            label0.grid(row=5, column=1)
+        if self.operation != '':
+            if self.risultato == None:
+                self.digits_num1.append("0")
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                label0 = Label(self.quadro_pulsanti, text=self.digits_num1)
+                label0.grid(row=5, column=1)
+            else:
+                print("C'è già un risultato...")
+                print("Entro nell'ELSE")
+                self.digits_num1.append(str(self.risultato))
+                self.risultato = ''
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                self.digits_num2.append("0")
+                print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
+                label0 = Label(self.quadro_pulsanti, text=self.digits_num2)
+                label0.grid(row=5, column=1)
         else:
             self.digits_num2.append("0")
             print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
@@ -268,11 +377,22 @@ class Calcolatrice:
 
     def button_comma_Premuto(self):
         print("Premuto: .")
-        if not self.operation:
-            self.digits_num1.append(".")
-            print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
-            label_comma = Label(self.quadro_pulsanti, text=self.digits_num1)
-            label_comma.grid(row=5, column=1)
+        if self.operation != '':
+            if self.risultato == None:
+                self.digits_num1.append(".")
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                label_comma = Label(self.quadro_pulsanti, text=self.digits_num1)
+                label_comma.grid(row=5, column=1)
+            else:
+                print("C'è già un risultato...")
+                print("Entro nell'ELSE")
+                self.digits_num1.append(str(self.risultato))
+                self.risultato = ''
+                print(f"La lista cifre 1 è ora questa: {self.digits_num1}")
+                self.digits_num2.append(".")
+                print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
+                label_comma = Label(self.quadro_pulsanti, text=self.digits_num2)
+                label_comma.grid(row=5, column=1)
         else:
             self.digits_num2.append(".")
             print(f"La lista cifre 2 è ora questa: {self.digits_num2}")
@@ -306,10 +426,10 @@ class Calcolatrice:
         print("Premuto: =")
         num1 = genera_numero_da_lista_di_cifre(self.digits_num1)
         print(f"Ho generato: {num1}")
-        self.digits_num1.clear()                                    
+        self.digits_num1.clear()                                                # svuota il buffer1                     
         num2 = genera_numero_da_lista_di_cifre(self.digits_num2)
-        print(f"Ho generato: {num2}")
-        self.digits_num2.clear()
+        print(f"Ho generato: {num2}")  
+        self.digits_num2.clear()                                                # svuota il buffer2
 
         print("Determino il tipo di operazione")
         if self.operation == "+":
