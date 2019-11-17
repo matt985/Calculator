@@ -4,4 +4,4 @@ basic calculator in python3.8 + tkinter (learning process)
 
 Uses two lists as memory buffers. Each char inside them represents a digit.
 Every time an operation is requested, the buffer is converted into an actual number (either float or integer)
-and the buffer of digits is cleared.
+and that same buffer is cleared.
