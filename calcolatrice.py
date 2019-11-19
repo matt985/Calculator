@@ -5,6 +5,7 @@ class Calcolatrice:
     def __init__(self, parent):
         self.master = parent
         self.master.title("Calcolatrice")
+        self.master.resizable(False, False)
         self.display = Entry(self.master, width=45, borderwidth=5)
         self.display.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
         self.digits1 = []
@@ -72,6 +73,7 @@ class Calcolatrice:
         else:
             print(f"C'è già in memoria il risultato {self.risultato}")
             self.digits1.append(str(self.risultato))
+            self.risultato = None
             print(f"La lista 1 è ora {self.digits1}")
             self.digits2.append(num)
             print(f"La lista 2 è ora {self.digits2}")
