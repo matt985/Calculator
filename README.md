@@ -1,5 +1,5 @@
 # calculator
-basic calculator in python3.8 + tkinter (learning process)
+basic calculator in python3.8 + tkinter
 
 
 Uses two lists as memory buffers. Each char inside them represents a digit.
